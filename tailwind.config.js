@@ -1,12 +1,16 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
+  darkMode: 'class',
   content: ['./index.html', './src/**/*.{vue,js,ts,jsx,tsx}'],
   theme: {
     extend: {
       colors: {
-        main: '#0e0e0e',
-        accent: '#d4fc54',
-        secondary: '#1d1e22',
+        'dark-main': '#0e0e0e',
+        main: '#f1f1f1',
+        'dark-accent': '#d4fc54',
+        accent: '#7e22ce',
+        'dark-secondary': '#1d1e22',
+        secondary: '#e3e3e3',
         button: '#333333'
       },
       animation: {
