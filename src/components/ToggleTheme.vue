@@ -22,11 +22,38 @@
 </template>
 
 <script setup lang="ts">
-
 import { useDark, useToggle } from '@vueuse/core'
+import { useWebAppTheme, useWebApp } from 'vue-tg'
+import { onMounted } from 'vue'
 
-const isDark = useDark()
+const { setHeaderColor } = useWebAppTheme()
+const { isReady } = useWebApp()
+
+const isDark = useDark({
+  onChanged(dark: boolean) {
+    if (dark) {
+      setHeaderColor('#111111')
+    } else {
+      setHeaderColor('#f1f1f1')
+
+    }
+  }
+})
+
 const toggleDark = useToggle(isDark)
+
+
+
+onMounted(() => {
+  console.log(isDark.value, 'theme')
+  if (isReady) {
+    if (isDark.value) {
+      setHeaderColor('#111111')
+    } else {
+      setHeaderColor('#f1f1f1')
+    }
+  }
+})
 
 </script>
 

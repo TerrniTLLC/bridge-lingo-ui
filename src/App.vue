@@ -1,11 +1,7 @@
 <script setup lang="ts">
-import { useWebAppTheme, useWebApp } from 'vue-tg'
-import { onMounted, ref, watch } from 'vue';
+import { ref, watch } from 'vue';
 import { Popover, PopoverButton, PopoverPanel, RadioGroup, RadioGroupLabel, RadioGroupOption } from '@headlessui/vue'
 import ToggleTheme from './components/ToggleTheme.vue';
-
-const { setHeaderColor } = useWebAppTheme()
-const { isReady } = useWebApp()
 
 const formData = ref<string>('')
 const isCopied = ref<boolean>(false)
@@ -39,11 +35,6 @@ const copyToClipBoard = () => {
   isCopied.value = true
 }
 
-onMounted(() => {
-  if (isReady) {
-    setHeaderColor('#111111')
-  }
-})
 
 </script>
 
