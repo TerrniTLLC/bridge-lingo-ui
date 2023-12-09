@@ -1,15 +1,15 @@
-import IndexPage from '@pages/index.vue'
-import ErrorPage from '@pages/404.vue'
-const routes = [
+import type { RouteRecordRaw } from "vue-router";
+
+const routes: RouteRecordRaw[] = [
   {
     name: 'Main',
     path: '/',
-    component: IndexPage
+    component: () => import('../pages/index.vue')
   },
   {
     name: '404 error',
     path: '/:pathMatch(.*)*',
-    component: ErrorPage
+    component: () => import('../pages/404.vue')
   }
 ]
 

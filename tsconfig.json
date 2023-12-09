@@ -1,48 +1,16 @@
 {
   "compilerOptions": {
     "module": "esnext",
-    "target": "ES6",
+    "target": "ESNext",
     "jsx": "preserve",
     "importHelpers": true,
     "noUnusedLocals": true,
     "moduleResolution": "node",
     "skipLibCheck": true,
     "esModuleInterop": true,
+    "resolveJsonModule": true,
     "allowSyntheticDefaultImports": true,
     "sourceMap": true,
-    "baseUrl": "./",
-    "paths": {
-      "@/*": [
-        "src/*"
-      ],
-      "@components/*": [
-        "src/components/*"
-      ],
-      "@layouts/*": [
-        "src/layouts/*"
-      ],
-      "@pages/*": [
-        "src/pages/*"
-      ],
-      "@boot/*": [
-        "src/boot/*"
-      ],
-      "@stores/*": [
-        "src/stores/*"
-      ],
-      "@ui/*": [
-        "src/components/ui/*"
-      ],
-      "@composables/*": [
-        "src/composables/*"
-      ],
-      "@types/*": [
-        "src/types/*"
-      ],
-      "@utils/*": [
-        "src/utils/*"
-      ]
-    },
     "lib": [
       "esnext",
       "dom",
@@ -52,15 +20,17 @@
   },
   "include": [
     "src/**/*.ts",
-    "src/**/*.tsx",
     "src/**/*.d.ts",
-    "src/**/*.vue",
-    "*.config.js",
-    "**/*.eslintrc.js"
+    "src/**/*.tsx",
+    "src/**/*.vue"
+  ],
+  "references": [
+    {
+      "path": "./tsconfig.node.json"
+    }
   ],
   "exclude": [
     "node_modules",
-    "dist",
-    ".quasar"
+    "dist"
   ]
 }
