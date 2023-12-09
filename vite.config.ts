@@ -12,16 +12,16 @@ export default defineConfig({
   ],
   resolve: {
     alias: {
-      '@': fileURLToPath(new URL('./src', import.meta.url)),
-      ui: path.resolve(__dirname, 'src/components/ui'),
-      composables: path.resolve(__dirname, 'src/composables'),
-      components: path.resolve(__dirname, 'src/components'),
-      stores: path.resolve(__dirname, 'src/stores'),
-      boot: path.resolve(__dirname, 'src/boot'),
-      pages: path.resolve(__dirname, 'src/pages'),
-      layouts: path.resolve(__dirname, 'src/layouts'),
-      types: path.resolve(__dirname, 'src/types'),
-      utils: path.resolve(__dirname, 'src/utils')
+      '@': path.resolve(__dirname, './src/'),
+      '@ui': path.resolve(__dirname, 'src/components/ui'),
+      '@composables': path.resolve(__dirname, 'src/composables'),
+      '@components': path.resolve(__dirname, 'src/components'),
+      '@stores': path.resolve(__dirname, 'src/stores'),
+      '@boot': path.resolve(__dirname, 'src/boot'),
+      '@pages': path.resolve(__dirname, 'src/pages'),
+      '@layouts': path.resolve(__dirname, 'src/layouts'),
+      '@types': path.resolve(__dirname, 'src/types'),
+      '@utils': path.resolve(__dirname, 'src/utils')
     }
   }
 })

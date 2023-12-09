@@ -12,25 +12,55 @@
     "sourceMap": true,
     "baseUrl": ".",
     "paths": {
-      "src/*": ["src/*"],
-      "components/*": ["src/components/*"],
-      "layouts/*": ["src/layouts/*"],
-      "pages/*": ["src/pages/*"],
-      "boot/*": ["src/boot/*"],
-      "stores/*": ["src/stores/*"],
-      "ui/*": ["src/components/ui/*"],
-      "composables/*": ["src/composables/*"],
-      "types/*": ["src/types/*"],
-      "utils/*": ["src/utils/*"]
+      "@/*": [
+        "src/*"
+      ],
+      "@components/*": [
+        "src/components/*"
+      ],
+      "@layouts/*": [
+        "src/layouts/*"
+      ],
+      "@pages/*": [
+        "src/pages/*"
+      ],
+      "@boot/*": [
+        "src/boot/*"
+      ],
+      "@stores/*": [
+        "src/stores/*"
+      ],
+      "@ui/*": [
+        "src/components/ui/*"
+      ],
+      "@composables/*": [
+        "src/composables/*"
+      ],
+      "@types/*": [
+        "src/types/*"
+      ],
+      "@utils/*": [
+        "src/utils/*"
+      ]
     },
-    "lib": ["esnext", "dom", "dom.iterable", "scripthost"]
+    "lib": [
+      "esnext",
+      "dom",
+      "dom.iterable",
+      "scripthost"
+    ]
   },
   "include": [
     "src/**/*.ts",
     "src/**/*.tsx",
+    "src/**/*.d.ts",
     "src/**/*.vue",
     "*.config.js",
     "**/*.eslintrc.js"
   ],
-  "exclude": ["node_modules", "dist", ".quasar"]
+  "exclude": [
+    "node_modules",
+    "dist",
+    ".quasar"
+  ]
 }

@@ -1,4 +1,4 @@
-import axios, { AxiosRequestConfig } from "axios"
+/* import axios, { AxiosRequestConfig } from "axios"
 import { notify } from "notiwind"
 
 
@@ -28,4 +28,4 @@ export const get = <T>(url: string, params: unknown = {}, config: AxiosRequestCo
   return request<T>(config)
 }
 
-// get<string>('/penis', params: {})
+// get<string>('/penis', params: {}) */

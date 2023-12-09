@@ -4,12 +4,12 @@ const routes: RouteRecordRaw[] = [
   {
     name: 'Main',
     path: '/',
-    component: () => import('pages/index.vue')
+    component: () => import('@pages/index.vue')
   },
   {
     name: '404 error',
     path: '/:pathMatch(.*)*',
-    component: () => import('pages/404.vue')
+    component: () => import('@pages/404.vue')
   }
 ]
 
