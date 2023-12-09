@@ -18,15 +18,16 @@ interface IResponse {
 const translationData = ref<IResponse | null>(null)
 
 watch(formData, () => {
-  isCopied.value = false
   if (formData.value.length === 0) {
     translationData.value = null
   }
 })
 
 const copyToClipBoard = (text: string) => {
-  navigator.clipboard.writeText(text);
-  isCopied.value = true
+  if (text) {
+    navigator.clipboard.writeText(text);
+    notify({ group: 'generic', type: 'modest', title: 'Copied!', text: `Text in buffer: ${text}` }, 3000)
+  }
 }
 
 const getData = async () => {
@@ -63,11 +64,10 @@ const getData = async () => {
           placeholder="Type something. Let's magic happend.." />
         <div class="flex flex-col px-2 py-1 items-start">
           <span class="text-button my-2 block">{{ formData.length }} / 636</span>
-          <button @click="copyToClipBoard(formData)" :class="[
-            isCopied ? 'dark:text-green-300 border dark:border-green-300 dark:bg-green-300/20 hover:dark:bg-green-300/30 text-green-600 border-green-600 bg-green-600/30 hover:bg-green-500/20' : 'text-white border border-button'
-          ]"
+          <div class="flex w-full gap-x-3">
+          <button @click="copyToClipBoard(formData)"
             class="text-xs w-fit bg-button hover:bg-button/80 duration-150 transiton-all ease-in px-2 py-1.5 rounded-lg flex gap-2 items-center">
-            <svg v-if="!isCopied" xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24">
+            <svg v-if="!isCopied" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 24 24">
               <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
                 <rect width="14" height="14" x="8" y="8" rx="2" ry="2" />
                 <path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2" />
@@ -78,6 +78,17 @@ const getData = async () => {
                 d="M19.548 7.267a2 2 0 1 0-3.096-2.533L8.666 14.25L6.2 12.4a2 2 0 0 0-2.4 3.2l3.233 2.425a3 3 0 0 0 4.122-.5l8.393-10.258Z" />
             </svg>
           </button>
+
+            <!-- TODO: Create page of saved translations and in notify show that pair when copy -->
+          <button
+            @click="notify({ group: 'generic', type: 'modest', title: 'Saved!', text: 'Pair of this translation added to list' }, 3000)"
+            class="text-xs w-fit bg-button hover:bg-button/80 duration-150 transiton-all ease-in px-2 py-1.5 rounded-lg flex gap-2 items-center">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 20 20">
+            <path fill="currentColor"
+              d="M2 3.5a1.5 1.5 0 0 0 1 1.415v6.17A1.5 1.5 0 1 0 4.915 13H7v2.085A1.5 1.5 0 1 0 8.915 17h6.17A1.5 1.5 0 1 0 17 15.085v-6.17A1.5 1.5 0 1 0 15.085 7H13V4.915A1.5 1.5 0 1 0 11.085 3h-6.17A1.5 1.5 0 0 0 2 3.5ZM8.915 16A1.504 1.504 0 0 0 8 15.085V13h3.085A1.5 1.5 0 1 0 13 11.085V8h2.085c.151.426.489.764.915.915v6.17a1.508 1.508 0 0 0-.915.915h-6.17ZM4 11.085v-6.17c.426-.151.764-.489.915-.915h6.17c.151.426.489.764.915.915V7H8.915A1.5 1.5 0 1 0 7 8.915V12H4.915A1.504 1.504 0 0 0 4 11.085Zm8 0a1.508 1.508 0 0 0-.915.915H8V8.915c.426-.151.764-.489.915-.915H12v3.085Z" />
+          </svg>
+          </button>
+          </div>
         </div>
       </div>
       <button
@@ -110,7 +121,7 @@ const getData = async () => {
             class="text-accent font-bold dark:text-accent-dark">Chinese</span>
         </h3>
         <div class="bg-secondary dark:bg-secondary-dark rounded-lg px-3 py-4 mb-4 flex items-center justify-between">
-          <span>{{ translationData.data }}</span>
+          <span class="text-black dark:text-white">{{ translationData.data }}</span>
           <button @click="copyToClipBoard(translationData.data)"
             class="bg-button rounded-lg text-center flex items-center justify-center p-1.5 ml-3">
             <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24">
@@ -127,9 +138,9 @@ const getData = async () => {
             Alternatives
           </h3>
           <div
-            class="bg-zinc-600/50 backdrop-blur-lg dark:bg-secondary-dark  border-2 border-dashed border-zinc-600 rounded-lg px-3 py-4 flex gap-x-3 items-center">
+            class="bg-zinc-600/50 backdrop-blur-lg dark:bg-secondary-dark  border-2 border-dashed border-zinc-600 rounded-lg px-3 py-4 flex gap-x-3 flex-wrap items-center">
             <span v-for="(item, k) in translationData.alternatives" :key="k + item"
-              class="text-zinc-300 dark:text-zinc-600">{{ `${k}): ` + item }}</span>
+              class="text-zinc-500/90 dark:text-zinc-600">{{ `${k}): ` + item }}</span>
           </div>
         </template>
 
@@ -151,5 +162,4 @@ const getData = async () => {
 .slide-fade-leave-to {
   transform: translateX(20px);
   opacity: 0;
-}
-</style>
+}</style>
