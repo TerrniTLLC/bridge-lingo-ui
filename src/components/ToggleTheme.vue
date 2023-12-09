@@ -1,7 +1,7 @@
 <template>
   <div>
     <Transition name="slide-up" mode="out-in">
-      <button v-if="isDark" class="text-xs bg-dark-secondary px-2 py-1 rounded-lg flex gap-2 items-center w-[105px]"
+      <button v-if="isDark" class="text-xs bg-secondary-dark px-2 py-1 rounded-lg flex gap-2 items-center w-[105px]"
         @click="toggleDark()">
         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24">
           <path fill="currentColor"
@@ -23,36 +23,25 @@
 
 <script setup lang="ts">
 import { useDark, useToggle } from '@vueuse/core'
-import { useWebAppTheme, useWebApp } from 'vue-tg'
+import { useWebAppTheme } from 'vue-tg'
 import { onMounted } from 'vue'
 
 const { setHeaderColor } = useWebAppTheme()
-const { isReady } = useWebApp()
+// const { isReady } = useWebApp()
 
-const isDark = useDark({
-  onChanged(dark: boolean) {
-    if (dark) {
-      setHeaderColor('#111111')
-    } else {
-      setHeaderColor('#f1f1f1')
-
-    }
-  }
-})
+const isDark = useDark()
 
 const toggleDark = useToggle(isDark)
 
-
-
 onMounted(() => {
-  console.log(isDark.value, 'theme')
-  if (isReady) {
-    if (isDark.value) {
-      setHeaderColor('#111111')
-    } else {
-      setHeaderColor('#f1f1f1')
-    }
-  }
+  // console.log(isDark, 'THEME')
+  // if (isReady) {
+  // if (isDark.value) {
+  setHeaderColor('#111111')
+  // } else {
+  // setHeaderColor('#f1f1f1')
+  // }
+  // }
 })
 
 </script>

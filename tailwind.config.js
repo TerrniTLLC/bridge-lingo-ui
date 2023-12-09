@@ -5,12 +5,18 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        'dark-main': '#0e0e0e',
-        main: '#f1f1f1',
-        'dark-accent': '#d4fc54',
-        accent: '#7e22ce',
-        'dark-secondary': '#1d1e22',
-        secondary: '#e3e3e3',
+        'main': {
+          DEFAULT: '#f1f1f1',
+          dark: '#0e0e0e'
+        },
+        'secondary': {
+          DEFAULT: '#e3e3e3',
+          dark: '#1d1e22'
+        },
+        'accent': {
+          DEFAULT: '#7e22ce',
+          dark: '#d4fc54'
+        },
         button: '#333333'
       },
       animation: {
