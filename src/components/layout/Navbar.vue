@@ -108,50 +108,56 @@ onMounted(() => {
             </svg>
             <span>Features</span>
           </DisclosureButton>
-          <DisclosurePanel class="px-4 pt-4 text-sm text-gray-500">
-            <router-link to="/"
-              @click="notify({ group: 'generic', type: 'warning', title: 'Ops! Something went wrong', text: 'This feature is in development' }, 2000); isOpenMenu = false"
-              class="flex w-full rounded-lg hover:bg-secondary mt-1 hover:dark:bg-secondary-dark transition-all durations-150 ease-in px-3 py-2 items-center text-center text-md font-medium text-black dark:text-white focus:outline-none focus-visible:ring focus-visible:ring-accent/75 focus-visible:dark:ring-accent-dark/75">
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-black dark:text-zinc-300 mr-3"
-                viewBox="0 0 256 256">
-                <g fill="currentColor">
-                  <path d="M200 72v112a8 8 0 0 1-8 8H32a8 8 0 0 1-8-8V72a8 8 0 0 1 8-8h160a8 8 0 0 1 8 8Z" opacity=".2" />
-                  <path
-                    d="M251.77 73a8 8 0 0 0-8.21.39L208 97.05V72a16 16 0 0 0-16-16H32a16 16 0 0 0-16 16v112a16 16 0 0 0 16 16h160a16 16 0 0 0 16-16v-25l35.56 23.71A8 8 0 0 0 248 184a8 8 0 0 0 8-8V80a8 8 0 0 0-4.23-7ZM192 184H32V72h160v112Zm48-22.95l-32-21.33v-23.44L240 95Z" />
-                </g>
-              </svg>
-              <span>Movie list</span>
-            </router-link>
-            <router-link to="/"
-              @click="notify({ group: 'generic', type: 'warning', title: 'Ops! Something went wrong', text: 'This feature is in development' }, 2000); isOpenMenu = false"
-              class="flex w-full rounded-lg hover:bg-secondary mt-1 hover:dark:bg-secondary-dark transition-all durations-150 ease-in px-3 py-2 items-center text-center text-md font-medium text-black dark:text-white focus:outline-none focus-visible:ring focus-visible:ring-accent/75 focus-visible:dark:ring-accent-dark/75">
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-black dark:text-zinc-300 mr-3"
-                viewBox="0 0 24 24">
-                <path fill="currentColor"
-                  d="M5.08 8h2.95c.32-1.25.78-2.45 1.38-3.56c-1.84.63-3.37 1.9-4.33 3.56zm2.42 4c0-.68.06-1.34.14-2H4.26c-.16.64-.26 1.31-.26 2s.1 1.36.26 2h3.38c-.08-.66-.14-1.32-.14-2zm-2.42 4a7.987 7.987 0 0 0 4.33 3.56A15.65 15.65 0 0 1 8.03 16H5.08zM12 4.04c-.83 1.2-1.48 2.53-1.91 3.96h3.82c-.43-1.43-1.08-2.76-1.91-3.96zM18.92 8a8.03 8.03 0 0 0-4.33-3.56c.6 1.11 1.06 2.31 1.38 3.56h2.95zM12 19.96c.83-1.2 1.48-2.53 1.91-3.96h-3.82c.43 1.43 1.08 2.76 1.91 3.96zm2.59-.4A8.03 8.03 0 0 0 18.92 16h-2.95a15.65 15.65 0 0 1-1.38 3.56zM19.74 10h-3.38c.08.66.14 1.32.14 2s-.06 1.34-.14 2h3.38c.16-.64.26-1.31.26-2s-.1-1.36-.26-2zM9.66 10c-.09.65-.16 1.32-.16 2s.07 1.34.16 2h4.68c.09-.66.16-1.32.16-2s-.07-1.35-.16-2H9.66z"
-                  opacity=".3" />
-                <path fill="currentColor"
-                  d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zm6.93 6h-2.95a15.65 15.65 0 0 0-1.38-3.56A8.03 8.03 0 0 1 18.92 8zM12 4.04c.83 1.2 1.48 2.53 1.91 3.96h-3.82c.43-1.43 1.08-2.76 1.91-3.96zM4.26 14C4.1 13.36 4 12.69 4 12s.1-1.36.26-2h3.38c-.08.66-.14 1.32-.14 2s.06 1.34.14 2H4.26zm.82 2h2.95c.32 1.25.78 2.45 1.38 3.56A7.987 7.987 0 0 1 5.08 16zm2.95-8H5.08a7.987 7.987 0 0 1 4.33-3.56A15.65 15.65 0 0 0 8.03 8zM12 19.96c-.83-1.2-1.48-2.53-1.91-3.96h3.82c-.43 1.43-1.08 2.76-1.91 3.96zM14.34 14H9.66c-.09-.66-.16-1.32-.16-2s.07-1.35.16-2h4.68c.09.65.16 1.32.16 2s-.07 1.34-.16 2zm.25 5.56c.6-1.11 1.06-2.31 1.38-3.56h2.95a8.03 8.03 0 0 1-4.33 3.56zM16.36 14c.08-.66.14-1.32.14-2s-.06-1.34-.14-2h3.38c.16.64.26 1.31.26 2s-.1 1.36-.26 2h-3.38z" />
-              </svg>
-              <span>Saved translations</span>
-            </router-link>
-
-            <router-link to="/"
-              @click="notify({ group: 'generic', type: 'warning', title: 'Ops! Something went wrong', text: 'This feature is in development' }, 2000); isOpenMenu = false"
-              class="flex w-full rounded-lg hover:bg-yellow-400/30 mt-1 hover:dark:bg-yellow-400/20 transition-all durations-150 ease-in px-3 py-2 items-center text-center text-md font-medium text-black dark:text-white focus:outline-none focus-visible:ring focus-visible:ring-accent/75 focus-visible:dark:ring-accent-dark/75">
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-yellow-500 dark:text-yellow-400 ml-0.5 mr-4"
-                viewBox="0 0 24 24">
-                <g fill="none">
+          <transition enter-active-class="transition duration-100 ease-out"
+            enter-from-class="transform scale-95 opacity-0" enter-to-class="transform scale-100 opacity-100"
+            leave-active-class="transition duration-75 ease-out" leave-from-class="transform scale-100 opacity-100"
+            leave-to-class="transform scale-95 opacity-0">
+            <DisclosurePanel class="px-4 pt-4 text-sm text-gray-500">
+              <router-link to="/"
+                @click="notify({ group: 'generic', type: 'warning', title: 'Ops! Something went wrong', text: 'This feature is in development' }, 2000); isOpenMenu = false"
+                class="flex w-full rounded-lg hover:bg-secondary mt-1 hover:dark:bg-secondary-dark transition-all durations-150 ease-in px-3 py-2 items-center text-center text-md font-medium text-black dark:text-white focus:outline-none focus-visible:ring focus-visible:ring-accent/75 focus-visible:dark:ring-accent-dark/75">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-black dark:text-zinc-300 mr-3"
+                  viewBox="0 0 256 256">
+                  <g fill="currentColor">
+                    <path d="M200 72v112a8 8 0 0 1-8 8H32a8 8 0 0 1-8-8V72a8 8 0 0 1 8-8h160a8 8 0 0 1 8 8Z"
+                      opacity=".2" />
+                    <path
+                      d="M251.77 73a8 8 0 0 0-8.21.39L208 97.05V72a16 16 0 0 0-16-16H32a16 16 0 0 0-16 16v112a16 16 0 0 0 16 16h160a16 16 0 0 0 16-16v-25l35.56 23.71A8 8 0 0 0 248 184a8 8 0 0 0 8-8V80a8 8 0 0 0-4.23-7ZM192 184H32V72h160v112Zm48-22.95l-32-21.33v-23.44L240 95Z" />
+                  </g>
+                </svg>
+                <span>Movie list</span>
+              </router-link>
+              <router-link to="/"
+                @click="notify({ group: 'generic', type: 'warning', title: 'Ops! Something went wrong', text: 'This feature is in development' }, 2000); isOpenMenu = false"
+                class="flex w-full rounded-lg hover:bg-secondary mt-1 hover:dark:bg-secondary-dark transition-all durations-150 ease-in px-3 py-2 items-center text-center text-md font-medium text-black dark:text-white focus:outline-none focus-visible:ring focus-visible:ring-accent/75 focus-visible:dark:ring-accent-dark/75">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-black dark:text-zinc-300 mr-3"
+                  viewBox="0 0 24 24">
                   <path fill="currentColor"
-                    d="m12 2l3.104 6.728l7.358.873l-5.44 5.03l1.444 7.268L12 18.28L5.534 21.9l1.444-7.268L1.538 9.6l7.359-.873L12 2Z"
-                    opacity=".16" />
-                  <path stroke="currentColor" stroke-linejoin="round" stroke-width="2"
-                    d="m12 2l3.104 6.728l7.358.873l-5.44 5.03l1.444 7.268L12 18.28L5.534 21.9l1.444-7.268L1.538 9.6l7.359-.873L12 2Z" />
-                </g>
-              </svg>
-              <span class="text-yellow-500 dark:text-yellow-400">Easter egg</span>
-            </router-link>
-          </DisclosurePanel>
+                    d="M5.08 8h2.95c.32-1.25.78-2.45 1.38-3.56c-1.84.63-3.37 1.9-4.33 3.56zm2.42 4c0-.68.06-1.34.14-2H4.26c-.16.64-.26 1.31-.26 2s.1 1.36.26 2h3.38c-.08-.66-.14-1.32-.14-2zm-2.42 4a7.987 7.987 0 0 0 4.33 3.56A15.65 15.65 0 0 1 8.03 16H5.08zM12 4.04c-.83 1.2-1.48 2.53-1.91 3.96h3.82c-.43-1.43-1.08-2.76-1.91-3.96zM18.92 8a8.03 8.03 0 0 0-4.33-3.56c.6 1.11 1.06 2.31 1.38 3.56h2.95zM12 19.96c.83-1.2 1.48-2.53 1.91-3.96h-3.82c.43 1.43 1.08 2.76 1.91 3.96zm2.59-.4A8.03 8.03 0 0 0 18.92 16h-2.95a15.65 15.65 0 0 1-1.38 3.56zM19.74 10h-3.38c.08.66.14 1.32.14 2s-.06 1.34-.14 2h3.38c.16-.64.26-1.31.26-2s-.1-1.36-.26-2zM9.66 10c-.09.65-.16 1.32-.16 2s.07 1.34.16 2h4.68c.09-.66.16-1.32.16-2s-.07-1.35-.16-2H9.66z"
+                    opacity=".3" />
+                  <path fill="currentColor"
+                    d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zm6.93 6h-2.95a15.65 15.65 0 0 0-1.38-3.56A8.03 8.03 0 0 1 18.92 8zM12 4.04c.83 1.2 1.48 2.53 1.91 3.96h-3.82c.43-1.43 1.08-2.76 1.91-3.96zM4.26 14C4.1 13.36 4 12.69 4 12s.1-1.36.26-2h3.38c-.08.66-.14 1.32-.14 2s.06 1.34.14 2H4.26zm.82 2h2.95c.32 1.25.78 2.45 1.38 3.56A7.987 7.987 0 0 1 5.08 16zm2.95-8H5.08a7.987 7.987 0 0 1 4.33-3.56A15.65 15.65 0 0 0 8.03 8zM12 19.96c-.83-1.2-1.48-2.53-1.91-3.96h3.82c-.43 1.43-1.08 2.76-1.91 3.96zM14.34 14H9.66c-.09-.66-.16-1.32-.16-2s.07-1.35.16-2h4.68c.09.65.16 1.32.16 2s-.07 1.34-.16 2zm.25 5.56c.6-1.11 1.06-2.31 1.38-3.56h2.95a8.03 8.03 0 0 1-4.33 3.56zM16.36 14c.08-.66.14-1.32.14-2s-.06-1.34-.14-2h3.38c.16.64.26 1.31.26 2s-.1 1.36-.26 2h-3.38z" />
+                </svg>
+                <span>Saved translations</span>
+              </router-link>
+
+              <router-link to="/"
+                @click="notify({ group: 'generic', type: 'warning', title: 'Ops! Something went wrong', text: 'This feature is in development' }, 2000); isOpenMenu = false"
+                class="flex w-full rounded-lg hover:bg-yellow-400/30 mt-1 hover:dark:bg-yellow-400/20 transition-all durations-150 ease-in px-3 py-2 items-center text-center text-md font-medium text-black dark:text-white focus:outline-none focus-visible:ring focus-visible:ring-accent/75 focus-visible:dark:ring-accent-dark/75">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-yellow-500 dark:text-yellow-400 ml-0.5 mr-4"
+                  viewBox="0 0 24 24">
+                  <g fill="none">
+                    <path fill="currentColor"
+                      d="m12 2l3.104 6.728l7.358.873l-5.44 5.03l1.444 7.268L12 18.28L5.534 21.9l1.444-7.268L1.538 9.6l7.359-.873L12 2Z"
+                      opacity=".16" />
+                    <path stroke="currentColor" stroke-linejoin="round" stroke-width="2"
+                      d="m12 2l3.104 6.728l7.358.873l-5.44 5.03l1.444 7.268L12 18.28L5.534 21.9l1.444-7.268L1.538 9.6l7.359-.873L12 2Z" />
+                  </g>
+                </svg>
+                <span class="text-yellow-500 dark:text-yellow-400">Easter egg</span>
+              </router-link>
+            </DisclosurePanel>
+          </transition>
         </Disclosure>
 
         <router-link to="/help" @click="isOpenMenu = false"
@@ -184,7 +190,7 @@ onMounted(() => {
         </button>
       </div>
 
-      <div class="mt-8 px-3  absolute bottom-10">
+      <div class="mb-8 mt-16 px-3 bottom-4">
         <div class="flex items-center gap-x-3">
           <a href="https://github.com/terrnit" target="_blank"
             class="text-black dark:text-white hover:underline underline-offset-4 transition-all duration-150 ease-in">Created
