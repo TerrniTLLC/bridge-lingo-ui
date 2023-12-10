@@ -83,7 +83,7 @@ onMounted(() => {
       </button>
     </div>
     <div v-if="isOpenMenu"
-      class="bg-main/95 border-b border-zinc-600 dark:bg-main-dark/95 backdrop-blur-sm absolute w-full h-[100vw] top-[56px] left-0 px-4">
+      class="bg-main/95 border-b border-zinc-600 dark:bg-main-dark/95 backdrop-blur-sm absolute w-full h-fit min-h-[90vw] top-[56px] left-0 px-4">
       <div class="mx-auto w-full rounded-2xl mt-4">
         <router-link to="/" @click="isOpenMenu = false"
           class="flex w-full rounded-lg bg-secondary dark:bg-secondary-dark px-2 py-2 text-left text-md font-medium text-black dark:text-white focus:outline-none focus-visible:ring focus-visible:ring-accent/75 focus-visible:dark:ring-accent-dark/75">
