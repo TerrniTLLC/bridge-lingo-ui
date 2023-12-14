@@ -46,7 +46,7 @@ onMounted(() => {
 </script>
 
 <template>
-  <nav class="dark:bg-main-dark/[98] bg-main/80 dark:text-white text-zinc-700 backdrop-blur-xl sticky top-0 py-3 z-20">
+  <nav class="dark:bg-main-dark/[98] bg-main/80 dark:text-white text-zinc-700 backdrop-blur-xl py-3 z-20">
     <div class="flex justify-between items-center px-3">
       <button @click="isOpenFeatures = false; isOpenMenu = !isOpenMenu"
         class="h-10 w-10 dark:bg-secondary-dark bg-secondary transition-all duration-150 ease-in hover:dark:bg-zinc-900 hover:bg-zinc-400 rounded-lg justify-center items-center flex text-xl text-center">
@@ -61,10 +61,10 @@ onMounted(() => {
           </svg>
         </Transition>
       </button>
-      <h1 class="font-bold">
-        <!-- 你能行的，宝贝~ ！ -->
+      <!-- <h1 class="font-bold">
+        你能行的，宝贝~ ！
         BridgeLingo
-      </h1>
+      </h1> -->
       <button @click="isOpenMenu = false; isOpenFeatures = !isOpenFeatures"
         class="h-10 w-10 dark:bg-secondary-dark bg-secondary transition-all duration-150 ease-in hover:dark:bg-zinc-900 hover:bg-zinc-400 rounded-lg justify-center items-center flex text-xl text-center">
         <Transition name="slide-up" mode="out-in">
