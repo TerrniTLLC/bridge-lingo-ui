@@ -11,6 +11,12 @@
     "resolveJsonModule": true,
     "allowSyntheticDefaultImports": true,
     "sourceMap": true,
+	"baseUrl": ".",
+    "paths": {
+      "@/*": ["src/*"],
+      "@components/*": ["src/components/*"],
+      "@assets/*": ["src/assets/*"]
+    },
     "lib": [
       "esnext",
       "dom",

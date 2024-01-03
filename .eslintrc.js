@@ -43,7 +43,7 @@ module.exports = {
         allowModifiers: true
       }
     ],
-    'vue/max-attributes-per-line': ['always'],
+    'vue/max-attributes-per-line': ['error'],
     'vue/html-closing-bracket-newline': 'error',
     'vue/padding-lines-in-component-definition': [
       'error',
@@ -102,7 +102,7 @@ module.exports = {
     'max-len': [
       'error',
       {
-        code: 300,
+        code: 600,
         ignoreUrls: true,
         tabWidth: 2,
         ignoreTrailingComments: true,

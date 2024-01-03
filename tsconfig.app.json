@@ -1,5 +1,11 @@
 {
   "extends": "@vue/tsconfig/tsconfig.dom.json",
+  "baseUrl": ".",
+  "paths": {
+      "@/*": ["src/*"],
+      "@components/*": ["src/components/*"],
+      "@assets/*": ["src/assets/*"]
+    },
   "include": [
     "src/**/*.ts",
     "src/**/*.d.ts",
